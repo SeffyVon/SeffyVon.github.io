@@ -2,27 +2,35 @@
 layout: default
 ---
 
-<div class="home">
-
-  <div class="jumbotron">
+<div class="jumbotron">
   <h1> {{ site.title }} </h1>
   <p>  {{ site.description }} </p>
-  <p><a class="btn btn-default" href="#" role="button">Learn more</a></p>
+  <p><a class="btn btn-default" href="#description" role="button">Learn more</a></p>
+ </div>
+
+ <div class="container" id="description">
+  <div class="row">
+    <div class="col-sm-8" >
+
+	  <ul class="post-list">
+	    {% for post in site.posts %}
+	      <li>
+	        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+	        <h2>
+	          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+	        </h2>
+	        {{ post.excerpt }}
+	      </li>
+	    {% endfor %}
+	  </ul>
+	  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    </div>
+    <div class="col-sm-4" >
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+      laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+      architecto beatae vitae dicta sunt explicabo.</p>
+
   </div>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        {{ post.excerpt }}
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
 </div>
+
