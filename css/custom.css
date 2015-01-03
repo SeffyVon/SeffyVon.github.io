@@ -48,9 +48,9 @@ footer{
 {
 	display:block;
 	background-color:#EEEEEE;
-	padding-left:5%;
-	padding-right:5%;
-	padding-bottom:5%;
-	padding-top:5%;
+	margin: 10%;
+	margin-top: 5%;
+	padding:10%;
+	padding-top: 5%;
 }
 

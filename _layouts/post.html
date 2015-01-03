@@ -11,13 +11,16 @@ layout: default
 	    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
   </header>
 
+
 	{{ content }}
 
    </div>
 
-    <div class="col-sm-4 col-md-4 col-lg-4">
+    <div class="col-sm-4 col-md-4 col-lg-4" style="display:block;
+  background-color:#EEEEEE;">
+      <h3> Blogs </h3>
 
-      <ul class="nav" style="background-color:lavender;">
+      <ul class="nav" >
      	 {% for post in site.posts %}
      	 <li> <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> </li>
      	 {% endfor %}  
