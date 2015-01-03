@@ -2,6 +2,18 @@
 
   {% include head.html %}
 
+<script>
+$(document).ready(function(){
+  $('#back').click(function(event) {
+      // Preventing default action of the event
+       event.preventDefault();
+
+      $('html, body').animate({ scrollTop: 0 }, 100);
+
+  });
+});
+</script>
+
   <body>
 
   {% include header.html %} 
@@ -9,6 +21,9 @@
   {{ content }}
 
   {% include footer.html %} 
+
   </body>
+
+
 
 </html>

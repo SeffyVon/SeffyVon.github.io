@@ -1,36 +1,75 @@
 ---
 layout: default
 ---
+<script>
+$(document).ready(function(){
+  $('#myblog').click(function(event) {
+      // Preventing default action of the event
+      event.preventDefault();
+       $( this ).css( "background", "transparent" );
+       $( this ).css( "color", "white" );       
+      $('html, body').animate({ scrollTop: $("#description").offset().top  }, 1000);
 
+  });
+});
+</script>
+<div class="first page" style=" margin-bottom:40px;">
 <div class="jumbotron">
   <h1> {{ site.title }} </h1>
   <p>  {{ site.description }} </p>
-  <p><a class="btn btn-default" href="#description" role="button">Learn more</a></p>
+  <div class="container">
+  <p><a class="btn btn-default" href="javascript:;" role="button" id="myblog"><span class="glyphicon glyphicon-chevron-down"></span></a></p>
+  </div>
  </div>
 
  <div class="container" id="description">
-  <div class="row">
-    <div class="col-sm-8" >
-
+  <div class="col-sm-8 content-left">
 	  <ul class="post-list">
 	    {% for post in site.posts %}
 	      <li>
 	        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-	        <h2>
-	          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+	        <h2 id="{{ post.title }}">
+	          <a   class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 	        </h2>
 	        {{ post.excerpt }}
 	      </li>
 	    {% endfor %}
 	  </ul>
-	  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-    </div>
-    <div class="col-sm-4" >
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-      laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-      architecto beatae vitae dicta sunt explicabo.</p>
-
   </div>
+
+    <div class="col-sm-4" >
+          <div class="sidebar-module sidebar-module-inset">
+            <h3>About</h3>
+            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+          </div>
+
+          <div class="sidebar-module">
+            <h4>Archives</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">March 2014</a></li>
+              <li><a href="#">February 2014</a></li>
+              <li><a href="#">January 2014</a></li>
+              <li><a href="#">December 2013</a></li>
+              <li><a href="#">November 2013</a></li>
+              <li><a href="#">October 2013</a></li>
+              <li><a href="#">September 2013</a></li>
+              <li><a href="#">August 2013</a></li>
+              <li><a href="#">July 2013</a></li>
+              <li><a href="#">June 2013</a></li>
+              <li><a href="#">May 2013</a></li>
+              <li><a href="#">April 2013</a></li>
+            </ol>
+          </div>       
+    </div>
 </div>
+</div>
+
+
+
+
+  
+
+
+
 

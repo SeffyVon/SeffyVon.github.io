@@ -1,5 +1,50 @@
+ <p style="text-align: center;">
+   <a class="btn btn-default" href="javascript:;" role="button" id="backToTop"><span class="glyphicon glyphicon-chevron-up"></span></a>
+ </p>
+
+
 <footer class="footer">
-  <!--span class="glyphicon glyphicon-envelope"></span><a href="mailto:{{ site.email }}">  {{ site.email }}</a></li>
- -->
+
+<div class="container" style=" padding-top:40px; padding-bottom:40px;">
+
+	<p></p><p></p><p></p><p></p><p></p><p></p>
+	<p></p><p></p><p></p><p></p><p></p><p></p>
+	<div class="col-sm-4 col-sm-offset-2">
+
+	<li>
+	<span class="glyphicon glyphicon-envelope"></span> <a href="mailto:{{ site.email }}" >  {{ site.email }}</a></li>
+	</li>
+
+	 {% if site.github_username %}
+          <li>
+          	GitHub: 
+            <a href="https://github.com/{{ site.github_username }}">
+
+
+              <span class="username">{{ site.github_username }}</span>
+            </a>
+          </li>
+          {% endif %}
+
+     {% if site.twitter_username %}
+          <li>
+          	Twitter: 
+            <a href="https://twitter.com/{{ site.twitter_username }}">
+
+
+              <span class="username">{{ site.twitter_username }}</span>
+            </a>
+          </li>
+     {% endif %}
+	</div>
+
+	<div class="col-sm-6">
+	<h6> {{ site.title }} </h2>
+	<p class="text-muted">{{ site.description }}</p>
+	</div>
+
+
+
+</div>
 
 </footer>

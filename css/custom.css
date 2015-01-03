@@ -1,29 +1,56 @@
 .jumbotron
 {
+	font-family: helvetica, sans-serif;
+	color: white;
 	background-image: url(../img/gr_hamster_HD.jpg);
 	min-height: 600px; 
-
+	text-align: center;
 }
 
-.jumbotron h1{
-	color: white;
-	text-transform: uppercase;
-}
-
-.jumbotron p{
+.jumbotron a{
 	color: white;
 }
 
-.btn{
-
+#myblog{
 	background: transparent;
-	color: #F2F2F2;
-
-	/* CSS Transition */
-	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
-	transition: background .2s ease-in-out, border .2s ease-in-out;
-
+	color:white;
 }
+
+#myblog:hover{
+	background: transparent;
+	color: green;
+}
+
+#backToTop{
+	background: transparent;
+	color: green;
+}
+
+#backToTop:hover{
+	background: transparent;
+	color: white;
+}
+
+
+body a{
+	color:#218886;
+}
+
+footer{
+	background-color: black;
+    color:white;
+}
+.content-left{
+ 	padding-right:20px; border-right: 1px solid #ccc;
+}
+
+.sidebar-module-inset
+{
+	display:block;
+	background-color:#EEEEEE;
+	padding-left:5%;
+	padding-right:5%;
+	padding-bottom:5%;
+	padding-top:5%;
+}
+
