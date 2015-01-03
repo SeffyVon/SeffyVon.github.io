@@ -9,10 +9,3 @@ github_username:  SeffyVon
 
 # Build settings
 markdown: kramdown
-
-# Multi lang
-gems: ['jekyll-multiple-languages']
-languages: ['en', 'cn']
-language_default: 'en'
-fill_default_content: true
-permalink: pretty
