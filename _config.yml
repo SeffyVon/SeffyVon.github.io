@@ -8,7 +8,7 @@ twitter_username: SeffyYjFeng
 github_username:  SeffyVon
 
 # Build settings
-#markdown: kramdown
+#markdown: redcarpet
 
 # Multi lang
 #gems: ['jekyll-multiple-languages']

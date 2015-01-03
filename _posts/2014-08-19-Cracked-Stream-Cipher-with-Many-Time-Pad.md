@@ -33,15 +33,15 @@ We can observe different behavior when XOR with others:
 
 > **Space** XOR [A-Za-z] := [a-zA-Z]
 > 
-> **Space **XOR space := 0
+> **Space** XOR space := 0
 > 
-> **[A****-Za-z]** XOR [A-Za-z] := 0b0xxx xxxx := [0x00-0x7E]
+> **[A-Za-z]** XOR [A-Za-z] := 0b0xxx xxxx := [0x00-0x7E]
 > 
 > **[A-Za-z]** XOR space := [a-zA-Z]
 
 we can see that: 
 
-> **Space XOR with others, will be all [a-zA-Z]|Space** 
+> **Space XOR with others, will be all [a-zA-Z]** 
 > 
 > whereas 
 > 
@@ -53,15 +53,15 @@ So it is very easy to understand the difference and write the code. We wrote a f
 
 And another benefit of the space is that once we know the plaintext pi character pi[j] is Space, we can get the plain text p11 by:
 
-> ** p11[j] := ci[j] XOR c11[j] XOR ASCII(Space)**
+> **<strong> p11[j] := ci[j] XOR c11[j] XOR ASCII(Space)</strong>**
 
 So we just decrypt the c11[0] to c11[len(c11)-1] one by one, by looking 
 
 > **For each c11[i], see if there is any space from p0[i] to p11[i].**
 > 
-> **If there is, then use it to decrypt c11[i]. **
+> If there is, then use it to decrypt c11[i]. 
 > 
-> **If there isn&#39;t then give it a special sign (e.g. star) to mark it is still encrypted.**
+> If there isn&#39;t then give it a special sign (e.g. star) to mark it is still encrypted.
 
 By this we can decrypt many characters in c11.
 

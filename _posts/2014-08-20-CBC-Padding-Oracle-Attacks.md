@@ -15,7 +15,7 @@ In the week 4 programming assignment ([Coursera Crypto I Padding Oracle Attack L
 
 2. c[i], p[i] without &#39;modified&#39; will all be referred to the original unmodified cipher text/ plain text.
 
-> ** [Cipher-Block Chaining (CBC) mode:](http://en.wikipedia.org/wiki/Cipher_block_chaining)**
+> [**Cipher-Block Chaining (CBC) mode:**](http://en.wikipedia.org/wiki/Cipher_block_chaining)
 > 
 > CBC mode is a type of the **block cipher**, which seperates the cipher into n fixed-size blocks so that it becomes a[0], a[1], a[2], .. a[n-1]. The blocks are usually 128 bits or 256 bits a block, depending on the encryption suite. As the block size is fixed for the blocking mode, the last block needs **padding to make sure each block has a fixed size.**
 > 
@@ -49,7 +49,7 @@ Note that the CBC needs padding in the last block. Thus we have a Padding Oracle
 > 
 > To some vulnerable website, the attacker submits ciphertext and **learns if last bytes of plaintextare a valid pad** by the behavior (error code, returning time difference etc.)
 
-> ** [PKCS5/7 Padding Scheme:](http://en.wikipedia.org/wiki/PKCS)**
+> [**PKCS5/7 Padding Scheme:**](http://en.wikipedia.org/wiki/PKCS)
 > 
 > **PKCS5 has 8 bytes/block. PKCS7 has 16 bytes/block.**
 > 
@@ -89,19 +89,19 @@ For the last but second byte:
 
 ![](http://imglf0.ph.126.net/LFaWNOIZcoM4ysgOYMdoQA==/6619522893606936948.png)
 
-The attacker can generate** guessed_byte (<strong> from 0x 00 32 to 0x ff 32 )** </strong>for the second last byte. 
+The attacker can generate guessed_byte <strong> (from 0x 00 32 to 0x ff 32 ) </strong>for the second last byte. 
 
 And the valid padding for last block will be ended with 0x 02 02.
 
-Let&#39;s set the **guessed_byte_for_n-2 := XX **, and the last byte of the block we had already calculated it as** 0x32. **
+Let&#39;s set the guessed_byte_for_n-2 := XX, and the last byte of the block we had already calculated it as 0x32.
 
-**guessed_bytes := 0x XX 32.**
+guessed_bytes := 0x XX 32.
 
 So, modified_c[i] := c[i] XOR **0x XX 32** XOR **0x 02 02**
 
-modified_p[i+1] := p[i+1] XOR **0x <strong>XX 32** </strong>XOR **0x 02 02**
+modified_p[i+1] := p[i+1] XOR **0x XX 32** XOR **0x 02 02**
 
-if **guessed_byte_for_n-2 **is correct ( in this case the 0x XX 32 equals to the last two bytes of p[i+1] )**, **then **the modified_p[i+1] will be ended with 0x 02 02,** making it a valid padding. The server will return a valid padding response. In my code, it&#39;s 404, because its plaintext has a valid padding, but it is not the correct context.
+if guessed_byte_for_n-2 is correct ( in this case the 0x XX 32 equals to the last two bytes of p[i+1] ), then the modified_p[i+1] will be ended with 0x 02 02, making it a valid padding. The server will return a valid padding response. In my code, it&#39;s 404, because its plaintext has a valid padding, but it is not the correct context.
 
 > Thus, the attacker can work from the last byte to the first byte of a block, and also move on from the first block to the last block.
 > 
@@ -115,9 +115,8 @@ if **guessed_byte_for_n-2 **is correct ( in this case the 0x XX 32 equals to the
 > 
 > iv+c0+c1+...+**{modified c(i-1)}**+ci--&gt; p0+p1+...+**{modified pi}**
 
-**
 
-**
+
 
 We can see the attacker can get all the modified blocks p0 to p(n-1), as long as he removes the blocks after ci, and modified c(i-1), he can submit the ciphertext  **iv+c0+c1+...+{modified c(i-1)}+ci **and observe if **p0+p1+...+{modified pi} **is a valid padding.
 
@@ -135,33 +134,31 @@ For programming design, we can have:
 
 {modified c(n-2)} :=  c(i-2) XOR **0x0j...****0j (j bytes of 0x0j&#39;s)** XOR **guessed_bytes**
 
-{modified p(n-1)} :=  p(n-1) XOR **<strong>0x0j...****0j (j bytes of 0x0j&#39;s)**</strong> XOR **guessed_bytes**
+{modified p(n-1)} :=  p(n-1) XOR **0x0j...****0j (j bytes of 0x0j&#39;s)** XOR **guessed_bytes**
 
-**
 
-**
 
-> So {modified pi} may be ened with either **guessed_bytes** or **<strong>0x0j...****0j (j bytes of 0x0j&#39;s).**</strong>
+> So {modified pi} may be ened with either **guessed_bytes** or <strong>0x0j...0j (j bytes of 0x0j&#39;s).</strong>
 
 When guessing the (16-j) th byte, then {modified pi} will always be a valid pad when the attacker attempts XOR with the byte **to the left of (16-j )th** byte., 
 
 A simple solution is to ignore this special case, and run the program [general.py](https://github.com/SeffyVon/Crypto-011/blob/master/ex4_CBCPaddingOracleAttack_General.py) The program return error code 404 when you submit a variable that has the valid padding.
 
-Once the program has found **<strong>0x0j 0j ... ****0j (j bytes of 0x0j&#39;s) **</strong>bytes at the end of the last block, we learn that these bytes actually a valid padding. 
+Once the program has found 0x0j 0j ... 0j (j bytes of 0x0j&#39;s) bytes at the end of the last block, we learn that these bytes actually a valid padding. 
 
-Let&#39;s say it&#39;s **0x08 08 08 08 08 08 08 08** ( 8 bytes of 0x08 &#39;s) as in the program [last_block.py](https://github.com/SeffyVon/Crypto-011/blob/master/ex4_CBCPaddingOracleAttack_LastBlock.py).
+Let&#39;s say it&#39;s 0x08 08 08 08 08 08 08 08 ( 8 bytes of 0x08 &#39;s) as in the program [last_block.py](https://github.com/SeffyVon/Crypto-011/blob/master/ex4_CBCPaddingOracleAttack_LastBlock.py).
 
-I calculate iv+c[0]+c[1] specially, and I already set padding equals to **<strong>0x0j...****0j (j bytes of 0x0j&#39;s) **</strong>, in this case 0x08 08 08 08 08 08 08 08.
+I calculate iv+c[0]+c[1] specially, and I already set padding equals to <strong>0x0j...0j (j bytes of 0x0j&#39;s) </strong>, in this case 0x08 08 08 08 08 08 08 08.
 
-> Because I need to verify the padding of the last block when attempts Padding Oracle Attack, so I need to **get rid of the padding <strong>0x08 08 08 08 08 08 08 08**</strong>. **<strong><strong><strong><strong><strong>(8 bytes of 0x08&#39;s)**</strong></strong></strong></strong></strong>
+> Because I need to verify the padding of the last block when attempts Padding Oracle Attack, so I need to get rid of the padding 0x08 08 08 08 08 08 08 08 (8 bytes of 0x08&#39;s)
 
 Recalled that to the right of the 8th byte(included),
 
-**{modified c(i-1)} := **c(i-1) XOR **<strong>0x0k 0k ... ****0k (k bytes of 0x0k&#39;s)**</strong> XOR guessed_bytes
+{modified c(i-1)} := c(i-1) XOR 0x0k 0k ... 0k (k bytes of 0x0k&#39;s) XOR guessed_bytes
 
-But this cass, I xor one more** <strong><strong><strong>0x0j 0j...****0j (j bytes of 0x0j&#39;s)**</strong></strong></strong> to the {modified c(i-1)} when attempting guesses to the left of the (16-j)th byte.
+But this cass, I xor one more 0x0j 0j... 0j (j bytes of 0x0j&#39;s)to the {modified c(i-1)} when attempting guesses to the left of the (16-j)th byte.
 
-**{modified c(i-1)} := **c(i-1) XOR **<strong>0x0k 0k ... ****0k (k bytes of 0x0k&#39;s) **</strong>XOR guessed_bytes  **XOR <strong><strong><strong><strong><strong><strong>0x08 08 08 08 08 08 08 08**</strong>. **<strong><strong><strong><strong><strong>(8 bytes of 0x08&#39;s)**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>
+{modified c(i-1)} := c(i-1) XOR 0x0k 0k ... 0k (k bytes of 0x0k&#39;s) XOR guessed_bytes  XOR 0x08 08 08 08 08 08 08 08 (8 bytes of 0x08&#39;s)
 
 And the attacker submits requests to the server to wait for the padding valid response.
 
@@ -175,7 +172,7 @@ For a cipher text of length n bits:
 > 
 > For each block, scan the 16 bytes one by one from the right. Each bytes try all thebyte from 0x00 to 0xff, 16*16 = 256 attempts/byte. So there are 16*256 = 2^12 bytes.
 > 
-> So there are O( (n/128+1) * 2 ^12) = **O(n). **(OMG, how amazing! ^^ )
+> So there are O( (n/128+1) * 2 ^12) = **<strong> O(n). </strong>** (OMG, how amazing! ^^ )
 
 Comparing to Brute Force will be **O(2^n)** in total. 
 
