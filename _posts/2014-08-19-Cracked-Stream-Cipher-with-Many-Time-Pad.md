@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Cracked Stream Cipher with Many-Time Pad"
-date:   2015-08-19 08:08
+date:   2014-08-19 08:08
 categories: Cryptography
 ---
 
