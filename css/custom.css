@@ -47,8 +47,7 @@ footer{
 .sidebar-module-inset
 {
 	display:block;
-	background-color:#EEEEEE;
-	margin: 5%;
-	padding:5%;
+	margin-left: 5%;
+	padding-left:5%;
 }
 
