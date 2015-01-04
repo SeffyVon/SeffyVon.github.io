@@ -33,15 +33,13 @@ In the week 4 programming assignment ([Coursera Crypto I Padding Oracle Attack L
 > 
 > ![](http://upload.wikimedia.org/wikipedia/commons/thumb/8/80/CBC_encryption.svg/601px-CBC_encryption.svg.png)
 > 
->      c[0] := Enc(K, IV XOR p[0])
-> 
->      c[i] := Enc(K, c[i-1] XOR p[i])   ( i &gt; 0 )      
+>     c[0] := Enc(K, IV XOR p[0])
+>  	  c[i] := Enc(K, c[i-1] XOR p[i])  ( i > 0 )      
 > 
 > **Decryption of CBC:**![](http://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CBC_decryption.svg/601px-CBC_decryption.svg.png)
 > 
 >     p[0] := IV XOR Dec(K, c[0])
-> 
->     p[i] := c[i-1] XOR Dec(K, c[i]) ( i &gt; 0 )
+>     p[i] := c[i-1] XOR Dec(K, c[i]) ( i > 0 )
 
 Note that the CBC needs padding in the last block. Thus we have a Padding Oracle Attack based on the padding.
 
