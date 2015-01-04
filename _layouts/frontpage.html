@@ -1,16 +1,13 @@
-<!DOCTYPE html>
+---
+layout: default
+---
 
-  {% include head.html %}
+<div class="container" style="margin-top: 50px;">
 
-  <body>
-  
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
 
-  {% include footer.html %} 
-  </body>
+    {{ content }}
 
-</html>
+</div>
