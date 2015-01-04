@@ -24,15 +24,21 @@ $(document).ready(function(){
 
  <div class="container" id="description">
   <div class="col-sm-8 content-left">
-	  <ul class="post-list" style="list-style: none;">
+	  <ul class="post-list" style="list-style: none; padding-bottom: 20px;">
 	    {% for post in site.posts %}
 	      <li>
 	        <h2 id="{{ post.title }}">
            <a   class="post-link" href="{{ post.url | prepend: site.baseurl }}" >{{ post.title }}</a>
 	        </h2>
           <h6>
-            <span class="glyphicon glyphicon-time"></span> <span class="post-meta" >{{ post.date | date: "%b %-d, %Y" }}</span>
-            <span class="glyphicon glyphicon-comment"></span> <a  class="post-link" href="{{ post.url | prepend: site.url }}#disqus_thread" data-disqus-identifier="{{ post.id }}" ></a>
+            <wrapper style="text-align:left;">
+              <span class="glyphicon glyphicon-time"  ></span> 
+              <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            </wrapper>
+            <wrapper style="float:right;">
+              <span class="glyphicon glyphicon-comment" style="color:#218886;"></span> 
+              <a  class="post-link" href="{{ post.url | prepend: site.url }}#disqus_thread" data-disqus-identifier="{{ post.id }}" ></a>
+            </wrapper>
           </h6>
 
           <p>
