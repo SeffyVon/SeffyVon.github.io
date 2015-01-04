@@ -2,7 +2,7 @@
 title: Seffy Von's Blog
 email: feng0823yj@gmail.com
 description: A super powerful little hamster's blog.
-baseurl: "http://seffyvon.github.io/" # the subpath of your site, e.g. /blog/
+baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://seffyvon.github.io/" # the base hostname & protocol for your site
 twitter_username: SeffyYjFeng
 github_username:  SeffyVon
@@ -16,3 +16,4 @@ github_username:  SeffyVon
 #language_default: 'en'
 #fill_default_content: true
 permalink: pretty
+highlighter: pygments
