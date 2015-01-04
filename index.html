@@ -24,14 +24,16 @@ $(document).ready(function(){
 
  <div class="container" id="description">
   <div class="col-sm-8 content-left">
-	  <ul class="post-list">
+	  <ul class="post-list" style="list-style: none;">
 	    {% for post in site.posts %}
 	      <li>
-	        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
 	        <h2 id="{{ post.title }}">
 	          <a   class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 	        </h2>
+          <h6>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          </h6>
+
 	        {{ post.excerpt }}
 	      </li>
 	    {% endfor %}
@@ -45,6 +47,7 @@ $(document).ready(function(){
             <p> Wanna be a scientist.</p>
             <p> Wanna be a linguistic. </p>
             <p> But let's start from being a programmer. </p>
+
           </div>      
     </div>
 </div>
