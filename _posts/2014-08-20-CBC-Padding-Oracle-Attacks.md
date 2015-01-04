@@ -29,15 +29,15 @@ In the week 4 programming assignment ([Coursera Crypto I Padding Oracle Attack L
 > 
 > **K** is the private key.
 > 
-> **Encryption of CBC:    **
+> **Encryption of CBC:**
 > 
-> ![](http://imglf2.ph.126.net/UnVi3ZY0IM7oF8VTetjvKw==/6608766371352765476.png)
+> ![](http://upload.wikimedia.org/wikipedia/commons/thumb/8/80/CBC_encryption.svg/601px-CBC_encryption.svg.png)
 > 
 >      c[0] := Enc(K, IV XOR p[0])
 > 
 >      c[i] := Enc(K, c[i-1] XOR p[i])   ( i &gt; 0 )      
 > 
-> **Decryption of CBC:**![](http://imglf0.ph.126.net/kMQ4JIdGWNHZy-Q6YEkmWw==/6619128168932564967.png)
+> **Decryption of CBC:**![](http://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CBC_decryption.svg/601px-CBC_decryption.svg.png)
 > 
 >     p[0] := IV XOR Dec(K, c[0])
 > 
@@ -53,9 +53,8 @@ Note that the CBC needs padding in the last block. Thus we have a Padding Oracle
 > 
 > **PKCS5 has 8 bytes/block. PKCS7 has 16 bytes/block.**
 > 
-> **![](http://imglf0.ph.126.net/npak0ILzp3AC4neaWfK8VA==/6608904909817864893.png)
+> ![](http://1.bp.blogspot.com/-j2Tn1N4_OcI/TrKIY1SnAzI/AAAAAAAAAI4/gDFh7wb0uBk/s1600/1.png)
 > 
-> **
 > 
 > **If there are n(n&gt;0) bytes left for becoming a full block, then the last block would be ended with n 0x0n&#39;s.**
 > 
@@ -71,7 +70,7 @@ Note that the CBC needs padding in the last block. Thus we have a Padding Oracle
 
 For the CBC training mode, padding oracle attack works because if attackers change some bit in the previous block(the last byte of p[n-2]), it will affect the next block (the last byte of p[n-1]).
 
-![](http://imglf0.ph.126.net/0-G9AS8o_62qoWrND2xvag==/6619512998002287408.png)
+![](https://cloud.githubusercontent.com/assets/3908463/5605879/871475ae-940c-11e4-84a9-43da1eb4d47e.png)
 
 The attacker can guess the value of** the red byte **by trying all the bytes from 0x00 to 0xff ( totally 256 attempts), by modify the cipher text, or by XORing the cipher text with the cipher block more specifically.
 
@@ -87,7 +86,7 @@ Once we get the last byte of c[i], e.g. 0x32, the attacker can** set the last by
 
 For the last but second byte:
 
-![](http://imglf0.ph.126.net/LFaWNOIZcoM4ysgOYMdoQA==/6619522893606936948.png)
+![](https://cloud.githubusercontent.com/assets/3908463/5605883/acd1102c-940c-11e4-80d8-f259dac8b60b.png)
 
 The attacker can generate guessed_byte <strong> (from 0x 00 32 to 0x ff 32 ) </strong>for the second last byte. 
 
