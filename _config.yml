@@ -17,3 +17,7 @@ github_username:  SeffyVon
 #fill_default_content: true
 permalink: pretty
 highlighter: pygments
+pygments: true
+# markdown: redcarpet
+# redcarpet:
+#   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]

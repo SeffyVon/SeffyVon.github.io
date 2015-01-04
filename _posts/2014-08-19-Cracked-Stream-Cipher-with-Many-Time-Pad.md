@@ -50,7 +50,7 @@ we can see that:
 So it is very easy to understand the difference and write the code. We wrote a function to test XOR, and to see if it is space:
 
 
-{% highlight ruby %}
+{% highlight python %}
 def isAlphaNum(result):
 	if result>0x60 and result<0x7b or result>0x40 and result<0x5b or result == 0: 
 		return True
