@@ -18,3 +18,7 @@ github_username:  SeffyVon
 permalink: pretty
 highlighter: pygments
 markdown: kramdown
+
+syntax-highlighting:
+  enabled : true
+  css: syntax.css

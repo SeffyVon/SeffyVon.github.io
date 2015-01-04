@@ -50,21 +50,7 @@ we can see that:
 So it is very easy to understand the difference and write the code. We wrote a function to test XOR, and to see if it is space:
 
 
-{% highlight text %}
-def isAlphaNum(result):
-	if result>0x60 and result<0x7b or result>0x40 and result<0x5b or result == 0: 
-		return True
-	return False
-
-def isSpace(chr0, chrs): #(int, list of int, int)
-	mask = 0xe0
-	for tmp in chrs:
-		result = tmp ^ chr0
-		if isAlphaNum(result) == False:
-			return False
-	# It is a space. We should use it to decrypt c11 '?'
-	return True
-{% endhighlight %}
+<script src="https://gist.github.com/SeffyVon/a9bf36d0e0e48695cf0d.js"></script>
 
 
 And another benefit of the space is that once we know the plaintext pi character pi[j] is Space, we can get the plain text p11 by:
