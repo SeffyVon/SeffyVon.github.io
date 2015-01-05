@@ -23,12 +23,17 @@
 <script>
 $(document).ready(function(){
   $('#backToTop').click(function(event) {
-      // Preventing default action of the event
       event.preventDefault();
+       $( this ).css( "background", "transparent" );  
+       $( this ).css( "color", "green" ); 
+       $('html, body').animate({ scrollTop: 0}, 1000);
+  });
+$('#myblog').hover(function(event) {
        $( this ).css( "background", "transparent" );
-       $( this ).css( "color", "green" );       
-      $('html, body').animate({ scrollTop: 0}, 1000);
-
+       $( this ).css( "color", "white" ); 
+  }, function(event) {
+       $( this ).css( "background", "transparent" );
+       $( this ).css( "color", "green" ); 
   });
 });
 </script>

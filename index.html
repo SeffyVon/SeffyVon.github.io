@@ -4,12 +4,17 @@ layout: default
 <script>
 $(document).ready(function(){
   $('#myblog').click(function(event) {
-      // Preventing default action of the event
       event.preventDefault();
        $( this ).css( "background", "transparent" );
-       $( this ).css( "color", "white" );       
-      $('html, body').animate({ scrollTop: $("#description").offset().top -50 }, 1000);
-
+       $( this ).css( "color", "white" ); 
+      $('html, body').animate({ scrollTop: $("#description").offset().top -50}, 1000);
+  });
+  $('#myblog').hover(function(event) {
+       $( this ).css( "background", "transparent" );
+       $( this ).css( "color", "green" ); 
+  }, function(event) {
+       $( this ).css( "background", "transparent" );
+       $( this ).css( "color", "white" ); 
   });
 });
 </script>
