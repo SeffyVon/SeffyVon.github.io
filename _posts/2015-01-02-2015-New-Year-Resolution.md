@@ -13,7 +13,7 @@ categories: Diary
 
 不知道有没有健身房是真的有驻店DJ？
 
-##### 于是在跑步机上决定了2015年的决心
+####于是在跑步机上决定了2015年的决心:
 
 * Have a casual talk with one stranger every day. 365 days would talk to 365 different persons.每天和一个陌生人聊聊天，365天就有365个人啦。
 
