@@ -32,15 +32,16 @@
             </a>
           </li>
      {% endif %}
-
+     
+  <img src="{{ site.url }}/img/rss.png" width="20" height="20" style="background:white;"/>
+  <a href="{{ "/feed.xml" | prepend: site.baseurl }}">subscribe by RSS</a>
 	</div>
 
 
 	<div class="col-sm-6">
 	<h5> {{ site.title }} </h5>
 	<p class="text-muted">{{ site.description }}</p>
-  <img src="{{ site.url }}/img/rss.png" width="20" height="20" style="background:white;"/>
-  <a href="{{ "/feed.xml" | prepend: site.baseurl }}">subscribe by RSS</a>
+
 	</div>
 
 </div>
