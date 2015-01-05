@@ -8,7 +8,7 @@ $(document).ready(function(){
       event.preventDefault();
        $( this ).css( "background", "transparent" );
        $( this ).css( "color", "white" );       
-      $('html, body').animate({ scrollTop: $("#description").offset().top  }, 1000);
+      $('html, body').animate({ scrollTop: $("#description").offset().top -50 }, 1000);
 
   });
 });
@@ -48,7 +48,7 @@ $(document).ready(function(){
 	    {% endfor %}
 	  </ul>
 
-    
+
   </div>
 
     <div class="col-sm-4" >
