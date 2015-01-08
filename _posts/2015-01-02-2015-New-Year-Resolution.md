@@ -15,8 +15,8 @@ categories: Diary
 
 于是在跑步机上决定了2015年的决心:
 
-* Have a casual talk with one stranger every day. 365 days would talk to 365 different persons.每天和一个陌生人聊聊天，365天就有365个人啦。
+* Have a casual talk with one stranger in average every day. The goal is not talking to people everyday (sometimes I would isolate myself for several days. It's to pursuit the final goal that 365 days would talk to 365 different persons!) :laughing: 平均每天和一个陌生人聊聊天，（注意不是每天都谈话哦，谁叫我这么悲哀有时候一编程就宅个好几天呢。）一年365天就有365个人啦！
 
-* Develop a beautiful web project. 之前的技能树太宽泛了，暂时还没有时间好好学系统管理，决定先从前端开发做起，先做一个惊艳的前端产品。
+* Learn cloud programming. Learn Python and R for parellel programming. 学习、学习、学习。往更高的天空飞！:hatched_chick:
 
-* Get an offer for summer internship in China. 如果点起了这棵专门的技能树，这个假期应该可以找到实习了吧^_^
+* Get an offer for summer internship. 如果点起了这棵专门的技能树，这个假期应该可以找到实习了吧 :relaxed: 
