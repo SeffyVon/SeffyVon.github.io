@@ -22,3 +22,5 @@ markdown: kramdown
 syntax-highlighting:
   enabled : true
   css: syntax.css
+
+gems: ["emoji_for_jekyll"]
