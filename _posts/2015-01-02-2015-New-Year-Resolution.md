@@ -15,7 +15,7 @@ categories: Diary
 
 于是在跑步机上决定了2015年的决心:
 
-* Have a casual talk with one stranger in average every day. The goal is not talking to people everyday (sometimes I would isolate myself for several days. It's to pursuit the final goal that 365 days would talk to 365 different persons!) :laughing: 平均每天和一个陌生人聊聊天，（注意不是每天都谈话哦，谁叫我这么悲哀有时候一编程就宅个好几天呢。）一年365天就有365个人啦！
+* Just recording the progress of my new year's resolution! Have a casual talk with one stranger in average every day. The goal is not talking to people everyday. (sometimes I would isolate myself for several days.) It’s to pursuit the final goal that 365 days would talk to 365 different persons! :laughing: 平均每天和一个陌生人聊聊天，（注意不是每天都谈话哦，谁叫我这么悲哀有时候一编程就宅个好几天呢。）一年365天就有365个人啦！
 
 * Learn cloud programming. Learn Python and R for parellel programming. 学习、学习、学习。往更高的天空飞！:hatched_chick:
 
