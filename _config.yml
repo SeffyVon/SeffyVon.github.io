@@ -23,4 +23,4 @@ syntax-highlighting:
   enabled : true
   css: syntax.css
 
-gems: ["emoji_for_jekyll"]
+gems: ["jemoji"]
