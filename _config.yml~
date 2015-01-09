@@ -3,9 +3,24 @@ title: Seffy Von's Blog
 email: feng0823yj@gmail.com
 description: A super powerful little hamster's blog.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "http://seffyvon.github.io" # the base hostname & protocol for your site
 twitter_username: SeffyYjFeng
 github_username:  SeffyVon
 
 # Build settings
+#markdown: redcarpet
+
+# Multi lang
+#gems: ['jekyll-multiple-languages']
+#languages: ['en', 'cn']
+#language_default: 'en'
+#fill_default_content: true
+permalink: pretty
+highlighter: pygments
 markdown: kramdown
+
+syntax-highlighting:
+  enabled : true
+  css: syntax.css
+
+gems: ["emoji_for_jekyll"]
