@@ -36,10 +36,17 @@ $(document).ready(function(){
            <a   class="post-link" href="{{ post.url | prepend: site.baseurl }}" >{{ post.title }}</a>
 	        </h2>
           <h6>
-            <wrapper style="text-align:left;">
+            <wrapper style="text-align:left; margin-right: 15px; ">
               <span class="glyphicon glyphicon-time"  ></span> 
-              <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+              <span class="post-date">{{ post.date | date: "%b %-d, %Y" }} </span>
             </wrapper>
+            
+            <wrapper>
+            {% for tag in post.tags %} 
+              <a role="button" class="btn btn-success" style="margin-right: 5px; font-size: 11px;"  href="tag/{{ tag }}/"> <span class="glyphicon glyphicon-tag" ></span> {{ tag }} </a>
+            {% endfor %}
+            </wrapper>
+
             <wrapper style="float:right;">
               <span class="glyphicon glyphicon-comment" style="color:#218886;"></span> 
               <a  class="post-link" href="{{ post.url | prepend: site.url }}#disqus_thread" data-disqus-identifier="{{ post.id }}" ></a>
@@ -63,8 +70,16 @@ $(document).ready(function(){
             <p> Wanna be a scientist.</p>
             <p> Wanna be a linguistic. </p>
             <p> But let's start from being a programmer. </p>
-    </div>
-</div>
+        </div>
+
+      <ul class="tags">
+      {% for tag in site.tags %}
+      <a role="button" class="btn btn-link" style="font-size: {{ tag | last | size | times: 500 | divided_by: site.tags.size | plus: 30}}%;  padding-top: 2px; padding-bottom: 2px; line-height:1.5; " href="/tag/{{ tag | first | slugize }}/">
+              {{ tag | first }}
+      </a>
+      {% endfor %}
+    </ul>
+  </div>
 </div>
 
 <script type="text/javascript">

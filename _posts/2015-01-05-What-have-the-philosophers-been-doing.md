@@ -3,6 +3,7 @@ layout: post
 title:  "与天地宇宙精神独往来——在读《哲学家都干了些什么？》"
 date:   2015-01-05 01:08
 categories: digest
+tags: ["Digest","Philosophy"]
 ---
 
 最近在读[《哲学家都干了些什么？》](http://www.amazon.cn/dp/B008HKBPGS)。在亚马逊.cn上用1英镑买Kindle版的图书，在国外终于也能 access to 知识的海洋，而不是在英语世界里面团团转，虽说在语言的浸润下日益提高，但是对知识的获取却始终极慢。

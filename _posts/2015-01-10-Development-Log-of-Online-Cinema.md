@@ -3,6 +3,7 @@ layout: post
 title:  "Development Dialog of Online Cinema"
 date:   2015-01-10 11:49
 categories: digest
+tags: ["Development", "JavaFX","PHP"]
 ---
 
 多设备电影同步观看系统项目开发日志。

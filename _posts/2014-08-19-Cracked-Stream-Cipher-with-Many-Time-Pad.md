@@ -3,6 +3,7 @@ layout: post
 title:  "Cracked Stream Cipher with Many-Time Pad"
 date:   2014-08-19 08:08
 categories: Cryptography
+tags: ["Cryptography","Python"]
 ---
 
 In the first Programming Assignment of Crypto, we are required to break a stream cipher with many-time pad. 

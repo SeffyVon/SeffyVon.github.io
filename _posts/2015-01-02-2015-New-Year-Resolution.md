@@ -3,6 +3,7 @@ layout: post
 title:  "2015 New Year Resolution!"
 date:   2015-01-03 01:08
 categories: Diary
+tags: Diary
 ---
 
 观察了最近去健身房的状态，发现跑步机上的速率和耐力都很受音乐影响呢。

@@ -2,7 +2,8 @@
 layout: post
 title:  "Conversations 2015"
 date:   2015-01-07 23:20
-categories: digest
+categories: diary
+tags: ["Diary", "Funny"]
 ---
 
 Just recording the progress of my new year's resolution! Have a casual talk with one stranger in average every day. The goal is not talking to people everyday. (sometimes I would isolate myself for several days.) It’s to pursuit the final goal that 365 days would talk to 365 different persons! :laughing: 

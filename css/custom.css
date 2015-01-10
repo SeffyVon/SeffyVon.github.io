@@ -11,12 +11,12 @@
 	color: white;
 }
 
-.btn{
+#myblog{
 	background: transparent;
 	color:white;
 }
 
-.btn:hover{
+#myblog:hover{
 	background: transparent;
 	color: green;
 }

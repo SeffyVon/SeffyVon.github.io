@@ -3,6 +3,7 @@ layout: post
 title:  "CBC Padding Oracle Attacks"
 date:   2014-08-20 08:08
 categories: Cryptography
+tags: ["Cryptography","Python"]
 ---
 
 In the week 4 programming assignment ([Coursera Crypto I Padding Oracle Attack Lecture 7.6 video](https://class.coursera.org/crypto-011/lecture/view?lecture_id=38), may need to register for class to seethe video), we broke Cipher-Block Chaining (CBC) mode using Padding Orracle Attacks. The main idea is that the attacker modifies some bits of the ciphertext, and to see the reaction of the server to learn some information of the ciphertext. In this padding oracle attack, this information is very essential to guess the bits of the plaintext.
