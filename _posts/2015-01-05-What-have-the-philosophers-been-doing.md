@@ -141,6 +141,7 @@ categories: digest
 
 `Michael Foucalt`: Madness.
 
+最近又读到果壳网对Wolfram Alpha的创始人`Steven Wolfram`的访谈：He thinks everything on the world could be calculated. So interviewer asked him, doesn't that lead to determinism? He said, the calculation is sooooooo large that only the galaxy could do it. The only way to foresee the nature is to wait for the galaxy to calculate it! He had a scholarship from Eton College, then he went to Uni of Oxford after graduation. But he was very indiscipline! in Oxford he went to the Year 2' s courses on the 2nd day, and Year 3's on the 3rd day, and he found them sucks, and never went to classes. Then he went to University of California for a PhD in physics just after 2 years. When he was in the California, he created a new Computer language, but he had some disagreement with the uni about the patent. So he went to Prinston! And at that time, his research was about [cellular automata](http://mathworld.wolfram.com/CellularAutomaton.html). No one thought it was important! But he thought, simple rules in each cell could generate very complex pattern, just like the galaxy, everything just obeyed very simple rules, but the system was so complex! And he found "Rule 30", which has been used as  random number generator used for large integers in Mathematica
 
 ** ** 
 
