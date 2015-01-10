@@ -74,7 +74,8 @@ $(document).ready(function(){
 
       <ul class="tags">
       {% for tag in site.tags %}
-      <a role="button" class="btn btn-link" style="font-size: {{ tag | last | size | times: 500 | divided_by: site.tags.size | plus: 30}}%;  padding-top: 2px; padding-bottom: 2px; line-height:1.5; " href="/tag/{{ tag | first | slugize }}/">
+      <a role="button" class="btn btn-success" style="font-size: {{ tag | last | size | times: 500 | divided_by: site.tags.size | plus: 20}}%;  line-height:1.5;  " href="/tag/{{ tag | first | slugize }}/">
+                          <span class="glyphicon glyphicon-tag"  ></span> 
               {{ tag | first }}
       </a>
       {% endfor %}
