@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Laravel and Ratchet Quick Started"
+title:  "Laravel Quick Started"
 date:   2015-01-11 11:49
 categories: development
-tags: ["Development","PHP", "Laravel", "Ratchet"]
+tags: ["PHP Laravel", "WebSocket"]
 ---
-Laravel PHP框架 + Rachet WebSocket 快速学习笔记。
+Laravel PHP框架快速学习笔记
 
 ## Life Cycle
 ------
@@ -21,7 +21,7 @@ Laravel PHP框架 + Rachet WebSocket 快速学习笔记。
 ## app/start
 ------
 `app/start` files: serve as a simple place to place any "bootstrapping" code. you could register a View composer, configure your logging preferences, set some PHP settings, etc. It's totally up to you. It contains:
-`global.php`:(the registration of Logger, the inclusion of your `app/filters.php`, etc.). `local.php`, `artisan.php`.
+`global.php`(the registration of Logger, the inclusion of your `app/filters.php`, etc.). `local.php`, `artisan.php`.
 
 You may also do pre and post request processing by registering before, after, finish, and shutdown application events. Listeners to these events will be run `before` and `after` each request to your application. 
 
@@ -459,5 +459,5 @@ class UserController extends BaseController {
 
 [Laveral Official Doc](http://laravel.com/docs/4.2/lifecycle)
 
-[Laveral + Ratchet Blog](https://medium.com/laravel-4/laravel-4-real-time-chat-eaa550829538)
+[Laveral + WebSocket Ratchet Blog](https://medium.com/laravel-4/laravel-4-real-time-chat-eaa550829538)
 

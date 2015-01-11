@@ -85,8 +85,8 @@ Once we get the last byte of c[i], e.g. 0x32, the attacker can** set the last by
 
 For the last but second byte:
 
-<img src="https://cloud.githubusercontent.com/assets/3908463/5605883/acd1102c-940c-11e4-80d8-f259dac8b60b.png">
-> 
+<img src="https://cloud.githubusercontent.com/assets/3908463/5605883/acd1102c-940c-11e4-80d8-f259dac8b60b.png" class="img-responsive">
+
 
 The attacker can generate guessed_byte <strong> (from 0x 00 32 to 0x ff 32 ) </strong>for the second last byte. 
 

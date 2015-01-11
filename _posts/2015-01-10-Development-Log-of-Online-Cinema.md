@@ -3,10 +3,10 @@ layout: post
 title:  "Development Diary of Online Cinema"
 date:   2015-01-10 11:49
 categories: digest
-tags: ["Development", "JavaFX","PHP"]
+tags: ["JavaFX","PHP","Cryptography"]
 ---
 
-多设备电影同步观看系统项目开发日志。
+多设备电影同步观看系统项目开发日志
 
 *  [JavaFX客户端](https://github.com/SeffyVon/FYP_JavaFX_Client)
 
@@ -25,7 +25,7 @@ tags: ["Development", "JavaFX","PHP"]
 ** **
 
 ####Jan 10, 2015####
-* Recently I have been looking at the authentication and security side of my PHP server, especially for integrating with the Digital Right Management (DRM) system. I adopted the Symphony framework, for `class autoloading`, `front controller routing` and `authentication`.
+* Recently I have been looking at the authentication and security side of my PHP server, especially for integrating with the Digital Right Management (DRM) system. I adopted the Laravel framework, for `class autoloading`, `front controller routing` and `authentication`.
 
 ####Jan 9, 2015####
 * Moved user and group file into global static variables, which provides easy access from different controllers.
