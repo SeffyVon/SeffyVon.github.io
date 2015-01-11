@@ -12,9 +12,16 @@ layout: default
       <span class="glyphicon glyphicon-time"></span> 
       <span class="post-meta" >{{ page.date | date: "%b %-d, %Y" }}</span>
       </wrapper>
-      <wrapper style="padding-left: 20px">
+
+      <wrapper style="padding: 20px">
       <span class="glyphicon glyphicon-comment" style="color:#218886;">
       </span> <a  class="post-link" href="{{ page.url | prepend: site.url }}#disqus_thread" data-disqus-identifier="{{ page.id }}" ></a>
+      </wrapper>
+
+      <wrapper>
+            {% for tag in page.tags %} 
+              <a role="button" class="btn btn-info" style="margin-right: 5px; font-size: 11px; background-color: #1dafac; "  href="tag/{{ tag }}/"> <span class="glyphicon glyphicon-tag" ></span> {{ tag }} </a>
+            {% endfor %}
       </wrapper>
   </header>
 
