@@ -16,6 +16,7 @@ In the week 4 programming assignment ([Coursera Crypto I Padding Oracle Attack L
 
 2. c[i], p[i] without &#39;modified&#39; will all be referred to the original unmodified cipher text/ plain text.
 
+
 > [**Cipher-Block Chaining (CBC) mode:**](http://en.wikipedia.org/wiki/Cipher_block_chaining)
 > 
 > CBC mode is a type of the **block cipher**, which seperates the cipher into n fixed-size blocks so that it becomes a[0], a[1], a[2], .. a[n-1]. The blocks are usually 128 bits or 256 bits a block, depending on the encryption suite. As the block size is fixed for the blocking mode, the last block needs **padding to make sure each block has a fixed size.**
@@ -31,17 +32,16 @@ In the week 4 programming assignment ([Coursera Crypto I Padding Oracle Attack L
 > **K** is the private key.
 > 
 > **Encryption of CBC:**
+> <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/80/CBC_encryption.svg/601px-CBC_encryption.svg.png" class="img-responsive">
 > 
-> ![](http://upload.wikimedia.org/wikipedia/commons/thumb/8/80/CBC_encryption.svg/601px-CBC_encryption.svg.png)
+> 	c[0] := Enc(K, IV XOR p[0])
+> 	c[i] := Enc(K, c[i-1] XOR p[i])  ( i > 0 )     
 > 
->     c[0] := Enc(K, IV XOR p[0])
->  	  c[i] := Enc(K, c[i-1] XOR p[i])  ( i > 0 )      
+> <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CBC_decryption.svg/601px-CBC_decryption.svg.png" class="img-responsive">
 > 
-> **Decryption of CBC:**![](http://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CBC_decryption.svg/601px-CBC_decryption.svg.png)
-> 
->     p[0] := IV XOR Dec(K, c[0])
->     p[i] := c[i-1] XOR Dec(K, c[i]) ( i > 0 )
-
+> 	p[0] := IV XOR Dec(K, c[0])
+> 	p[i] := c[i-1] XOR Dec(K, c[i]) ( i > 0 )
+>
 Note that the CBC needs padding in the last block. Thus we have a Padding Oracle Attack based on the padding.
 
 > [**Padding Oracle Attack:**](http://en.wikipedia.org/wiki/Padding_oracle) 
@@ -52,7 +52,7 @@ Note that the CBC needs padding in the last block. Thus we have a Padding Oracle
 > 
 > **PKCS5 has 8 bytes/block. PKCS7 has 16 bytes/block.**
 > 
-> ![](http://1.bp.blogspot.com/-j2Tn1N4_OcI/TrKIY1SnAzI/AAAAAAAAAI4/gDFh7wb0uBk/s1600/1.png)
+> <img src="http://1.bp.blogspot.com/-j2Tn1N4_OcI/TrKIY1SnAzI/AAAAAAAAAI4/gDFh7wb0uBk/s1600/1.png" class="img-responsive">
 > 
 > 
 > **If there are n(n&gt;0) bytes left for becoming a full block, then the last block would be ended with n 0x0n&#39;s.**
@@ -69,7 +69,7 @@ Note that the CBC needs padding in the last block. Thus we have a Padding Oracle
 
 For the CBC training mode, padding oracle attack works because if attackers change some bit in the previous block(the last byte of p[n-2]), it will affect the next block (the last byte of p[n-1]).
 
-![](https://cloud.githubusercontent.com/assets/3908463/5605879/871475ae-940c-11e4-84a9-43da1eb4d47e.png)
+<img src="https://cloud.githubusercontent.com/assets/3908463/5605879/871475ae-940c-11e4-84a9-43da1eb4d47e.png" class="img-responsive">
 
 The attacker can guess the value of** the red byte **by trying all the bytes from 0x00 to 0xff ( totally 256 attempts), by modify the cipher text, or by XORing the cipher text with the cipher block more specifically.
 
@@ -85,7 +85,8 @@ Once we get the last byte of c[i], e.g. 0x32, the attacker can** set the last by
 
 For the last but second byte:
 
-![](https://cloud.githubusercontent.com/assets/3908463/5605883/acd1102c-940c-11e4-80d8-f259dac8b60b.png)
+<img src="https://cloud.githubusercontent.com/assets/3908463/5605883/acd1102c-940c-11e4-80d8-f259dac8b60b.png">
+> 
 
 The attacker can generate guessed_byte <strong> (from 0x 00 32 to 0x ff 32 ) </strong>for the second last byte. 
 

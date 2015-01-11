@@ -160,8 +160,9 @@ tags: ["Digest","Philosophy"]
 
 ** ** 
 
-### 另外转载果壳论坛上的强大的西方哲学系谱图：
-![1](http://ww1.sinaimg.cn/bmiddle/664f886djw1e7t5p9fjjlj20k0742kjl.jpg)
+### 另外强大的西方哲学系谱图：
+转载自果壳论坛上。
+<!-- ![1](http://ww1.sinaimg.cn/bmiddle/664f886djw1e7t5p9fjjlj20k0742kjl.jpg) -->
 
-
+<img src="http://ww1.sinaimg.cn/bmiddle/664f886djw1e7t5p9fjjlj20k0742kjl.jpg" class="img-responsive" alt="哲学系谱图">
 
