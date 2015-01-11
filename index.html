@@ -43,7 +43,7 @@ $(document).ready(function(){
             
             <wrapper>
             {% for tag in post.tags %} 
-              <a role="button" class="btn btn-success" style="margin-right: 5px; font-size: 11px;"  href="tag/{{ tag }}/"> <span class="glyphicon glyphicon-tag" ></span> {{ tag }} </a>
+              <a role="button" class="btn btn-info" style="margin-right: 5px; font-size: 11px; background-color: #1dafac; "  href="tag/{{ tag }}/"> <span class="glyphicon glyphicon-tag" ></span> {{ tag }} </a>
             {% endfor %}
             </wrapper>
 
@@ -74,7 +74,7 @@ $(document).ready(function(){
 
       <ul class="tags">
       {% for tag in site.tags %}
-      <a role="button" class="btn btn-success" style="font-size: {{ tag | last | size | times: 500 | divided_by: site.tags.size | plus: 20}}%;  line-height:1.5;  margin: 1%; " href="/tag/{{ tag | first | slugize }}/">
+      <a role="button" class="btn btn-info" style="font-size: {{ tag | last | size | times: 500 | divided_by: site.tags.size | plus: 20}}%;  line-height:1.5;  margin: 1%; background-color: #1dafac;" href="/tag/{{ tag | first | slugize }}/">
                           <span class="glyphicon glyphicon-tag"  ></span> 
               {{ tag | first }}
       </a>
