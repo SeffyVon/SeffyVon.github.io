@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Development Dialog of Online Cinema"
+title:  "Development Diary of Online Cinema"
 date:   2015-01-10 11:49
 categories: digest
 tags: ["Development", "JavaFX","PHP"]
