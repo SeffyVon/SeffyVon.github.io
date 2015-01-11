@@ -70,16 +70,17 @@ $(document).ready(function(){
             <p> Wanna be a scientist.</p>
             <p> Wanna be a linguistic. </p>
             <p> But let's start from being a programmer. </p>
-        </div>
-
-      <ul class="tags">
-      {% for tag in site.tags %}
-      <a role="button" class="btn btn-info" style="font-size: {{ tag | last | size | times: 500 | divided_by: site.tags.size | plus: 20}}%;  line-height:1.5;  margin: 1%; background-color: #1dafac;" href="/tag/{{ tag | first | slugize }}/">
-                          <span class="glyphicon glyphicon-tag"  ></span> 
+            <ul class="tags" style="padding-left: 0px;">
+          {% for tag in site.tags %}
+          <a role="button" class="btn btn-info" style="font-size: {{ tag | last | size | times: 500 | divided_by: site.tags.size | plus: 20}}%;  line-height:1.5;  margin: 1%; background-color: #1dafac; " href="/tag/{{ tag | first | slugize }}/">
+             <span class="glyphicon glyphicon-tag"  ></span> 
               {{ tag | first }}
-      </a>
+          </a>
       {% endfor %}
     </ul>
+        </div>
+
+      
   </div>
 </div>
 
