@@ -24,16 +24,21 @@ tags: ["JavaFX","PHP","Cryptography"]
 
 ** **
 
+####Jan 12, 2015
+* Read [JavaFX vs HTML 5](http://www.slideshare.net/rcuprak/javafx-versus-html5-javaone-2014?related=1)
+* Started with Laravel
+
 ####Jan 11, 2015####
 
-* Set up of Laverel:
+**Set up of Laverel:**
+
 1. Added php_mcrypt.so and php_pdo_pgsql.so extension to php.ini. 
 2. Migration of the sample database. 
 3. Routing of the sample website.
 
-* Deployment of a sample Laverel.
+**Deployment of a sample Laverel.**
 
-* Read primitive of DRM algorithms:
+**Read primitive of DRM algorithms:**
 
 1. **Broadcast Encryption**: [Shamir's Secret Sharing](http://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing) k out of n. Any k + 1 participants can then combine their shares to recover s via interpolation. each authorized recipient deduces the secret, while all others deduce nonsense. `Can I use the server as the very vital K?`
 
@@ -41,7 +46,8 @@ tags: ["JavaFX","PHP","Cryptography"]
 * Tracing Based on `Leaked Decryption Keys`: Boneh and Franklin[17] Boneh and Shaw[22]
 * Tracing Based on `Leaked Decrypted Content`: watermarking techniques. First, personalized keys are distributed to the users via any broadcast encryption scheme; then, each variant is encrypted under its own key.
 * These tracing methods are suitable for subscription. But my goal is to maximise the leaking cost of the content after decryption.
-3.
+
+3. **public-key or symmetric-key based**:
 
 ** **
 
