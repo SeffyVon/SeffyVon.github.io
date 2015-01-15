@@ -21,3 +21,11 @@ Just recording the progress of my new year's resolution! Have a casual talk with
 `Ian`, from Germany, a professor from a law school in Birmingham: A very clear-minded and performative guy. We talked about education, courages in job application, international students, deficit of British law, philosophy. A very big talk. :relieved:
 
 `Ahmed`, from Iraq, and worked as a teacher in university in Iraq, now second year PhD student at UoB, having published three papers already! Had a very very good Buffet together at Five ways! Very good at algorithms! Laughs like Achim. And we both think Achim and Tom are so handsome that we want to cry! Talked about life, papers, algorithms, movies, Muslim religions! :relaxed:
+
+`Bobbie`: from Indonesia. A Bham student in Health Science. Met her at the Learning Center for several times, so naturally exchanged contacts. :smiley:
+
+`忘了`: A girl from (忘了). Very beautiful and knowledgable. Explain things well! Had several chats during the lectures! :blush:
+
+`Zully`: a CS girl from Ecuador. Very Q! She told me a lot about trip in Edinburgh, delicious food, (Cannot remember others but only Plaintain (芭蕉)), Snorkelling in the islands Galápagos Islands, climate in her countries! We had lunch, went to Network Sec and Aldi together. Q font as well! :yum:
+
+`Ian`: Lecturer in Networks. Very knowledgable! 
