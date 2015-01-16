@@ -24,6 +24,13 @@ tags: ["JavaFX","PHP","Cryptography"]
 
 ** **
 
+####Jan 16, 2015
+* Changed the view in the current cinema controller.
+* Used Ratchet WebSocket for Download Request, Sync, Chat, Status Changes. Passed JSON between servers and clients.
+* Added view for addding new movie.
+* Used Config.Profile class to store current user and current group.
+* Used Config.Interface class to store some global interface.
+
 ####Jan 12, 2015
 * Read [JavaFX vs HTML 5](http://www.slideshare.net/rcuprak/javafx-versus-html5-javaone-2014?related=1)
 * Started with Laravel
