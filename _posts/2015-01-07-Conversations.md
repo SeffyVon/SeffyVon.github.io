@@ -6,7 +6,7 @@ categories: Diary
 tags: ["Diary", "Funny"]
 ---
 
-Just recording the progress of my new year's resolution! Have a casual talk with one stranger in average every day. The goal is not talking to people everyday. (sometimes I would isolate myself for several days.) It’s to pursuit the final goal that 365 days would talk to 365 different persons! :laughing: 
+I am just recording the progress of my new year's resolution! ;) Have a casual talk with one stranger in average every day. The goal is not talking to people everyday. (sometimes I would isolate myself for several days.) It’s to pursuit the final goal that 365 days would talk to 365 different persons! :laughing: 
 
 平均每天和一个陌生人聊聊天，（注意不是每天都谈话哦，谁叫我这么悲哀有时候一编程就宅个好几天呢。）一年365天就有365个人啦！
 
