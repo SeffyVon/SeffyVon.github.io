@@ -2,8 +2,8 @@
 layout: post
 title:  "Laravel Quick Started"
 date:   2015-01-11 11:49
-categories: development
-tags: ["PHP Laravel", "WebSocket"]
+categories: Development
+tags: ["PHP", "Laravel", "WebSocket"]
 ---
 Laravel PHP框架快速学习笔记
 

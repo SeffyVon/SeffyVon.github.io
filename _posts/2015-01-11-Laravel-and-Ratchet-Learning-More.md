@@ -2,8 +2,8 @@
 layout: post
 title:  "Laravel and Ratchet 建立一个简单博客"
 date:   2015-01-11 12:49
-categories: development
-tags: ["PHP Laravel", "WebSocket"]
+categories: Development
+tags: ["PHP", "Laravel", "WebSocket"]
 ---
 
 新手文档，建立一个简单博客。

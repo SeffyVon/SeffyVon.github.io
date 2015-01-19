@@ -2,7 +2,7 @@
 layout: post
 title:  "与天地宇宙精神独往来——在读《哲学家都干了些什么？》"
 date:   2015-01-05 01:08
-categories: digest
+categories: Digest
 tags: ["Digest","Philosophy"]
 ---
 

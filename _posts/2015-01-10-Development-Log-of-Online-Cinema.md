@@ -16,7 +16,6 @@ tags: ["JavaFX","PHP","Cryptography"]
 
 ####To do list####
 
-* Framework to integrate Websocket and REST request. Change to Json.
 * Authentication.
 * DRM.
 * Client: message management System.
@@ -24,10 +23,12 @@ tags: ["JavaFX","PHP","Cryptography"]
 
 ** **
 
+####Jan 17, 2015
+* [Lavarel Forge](https://medium.com/laravel-4/forge-ssl-66b4252db7d8)
+
 ####Jan 16, 2015
 * Changed the view in the current cinema controller.
 * Used Ratchet WebSocket for Download Request, Sync, Chat, Status Changes. Passed JSON between servers and clients.
-* Added view for addding new movie.
 * Used Config.Profile class to store current user and current group.
 * Used Config.Interface class to store some global interface.
 
