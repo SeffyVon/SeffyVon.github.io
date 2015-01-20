@@ -372,6 +372,19 @@ Route::get('/', function()
 
 {% endhighlight %}
 
+### Special Response 
+---
+{% highlight php startinline%}
+
+return Response::json(array('name' => 'Steve', 'state' => 'CA')); // JSON
+
+return Response::download($pathToFile); // Download
+
+return Response::download($pathToFile, $name, $headers); // Download
+
+
+{% endhighlight %}
+
 ## Controller
 ------
 
@@ -525,14 +538,16 @@ For `larger` applications, it is recommended that you use an `in-memory cache` s
 ------
 [link](http://laravel.com/docs/4.2/session)
 
-## Database
+## Database vs Eloquent
 ------
 
-## Eloquent
+## IoC - Dependency injection
 ------
+`Dependency injection`: a method of removing hard-coded class dependencies. Instead, the dependencies are injected at run-time, allowing for greater flexibility as dependency implementations may be swapped easily.
 
+They prepare your application to actually handle requests, and usually need to be executed before a route or controller is actually called. 
 
-
+Like most other bootstrap code, the start files are always an option for registering IoC bindings. Alternatively, you could create an app/ioc.php (filename does not matter) file and require that file from your start file.
 
 
 

@@ -6,10 +6,10 @@ categories: Development
 tags: ["PHP", "Laravel", "WebSocket"]
 ---
 
-新手文档，建立一个简单博客。
+总结一些案例的主要步骤。
 
 
-#Hello world 主页
+#Hello world 主页案例
 ------
 
 * `Controller`: php artisan 生成WelcomeController 
@@ -33,7 +33,7 @@ Route::get('/', function()
 });
 {% endhighlight %}
 
-#RESTful
+#RESTful案例
 ------
 * `route`: app/routes.phpz中加入下面一句话，生成RESTful控制器，articles对应ArticlesController
 
@@ -68,7 +68,6 @@ class Article extends Eloquent
 {% highlight bash %} $ php artisan migrate {% endhighlight %}
 
 * `Controller`,`route`: 修改ArticlesController中的store()存储文章，和show()显示文章
-
 {% highlight php startinline %}
 public function store()
 {
@@ -89,13 +88,108 @@ public function show($id)
 * `View`:app/view/articles/show.blade.php 显示 { { $article->title } } { { $article->text} }
 
 
+## Authentication 案例
+-------
+* `Database`：用migrate生成数据库，位于/app/database/migrate，修改其up()方法。
+{% highlight bash %}
+
+$ php artisan migrate:make create_articles_table --create=articles
+$ php artisan migrate:make create_pages_table --create=pages
+
+// 修改up()方法
+
+$ php artisan migrate
+
+{% endhighlight %} 
+
+{% highlight php startinline %}
+
+Schema::create('articles', function(Blueprint $table)
+{
+	$table->increments('id');
+	$table->string('title');
+	$table->string('slug')->nullable();
+	$table->text('body')->nullable();
+	$table->string('image')->nullable();
+	$table->integer('user_id');
+	$table->timestamps();
+});
+
+{% endhighlight %} 
 
 
+* `Database`：用seed生成继承Seeder的类，位于/app/database/seed，然后修改其中的run方法。
+
+{% highlight bash %}
+$ php artisan generate:seed page//用seed生成继承Seeder的类
+$ php artisan generate:seed article//用seed生成继承Seeder的类
+
+// 修改run方法
+
+$ php artisan generate:seed Sentry//用seed生成继承Seeder的类
+//...
+
+$ php artisan db:seed//真正的seed
+
+{% endhighlight %} 
+
+* `Model`:
+
+{% highlight bash %}
+
+php artisan generate:model article
+php artisan generate:model page
+
+{% endhighlight %} 
+
+* `app/controllers/admin/AuthController.php` using 
+{% highlight bash %} $ php artisan generate:controller admin/AuthControler {% endhighlight %} 
+
+* Create a postLogin() function in the AuthController:
+
+{% highlight php startinline %}
+
+void postLogin() {
+	$credentials = array('email' => Input::get('email'), 'passwords' => Input::get('password'));
+
+	try{
+		$user = Sentry::authenticate($credentials, false);
+
+		if($user){
+	    	return Redirect::route('admin.pages.index');
+		}
+
+	}catch(\Exception $e){
+		return Redirect::route('admin.login')->withErrors(array('login'=>$e->getMesssage()));
+	}
+}
 
 
+{% endhighlight %}
 
 
+* `Route`:
 
+{% highlight php startinline %}
+
+Route::get('admin/logout', array('as' => 'admin.logout', 'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
+Route::get('admin/login', array('as' => 'admin.login', 'uses' => 'App\Controllers\Admin\AuthController@getLogin'));
+Route::post('admin/login', array('as' => 'admin.login.post', 'uses' => 'App\Controllers\Admin\AuthController@postLogin'));
+
+Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
+{
+    Route::any('/', 'App\Controllers\Admin\PagesController@index');
+    Route::resource('articles', 'App\Controllers\Admin\ArticlesController');
+    Route::resource('pages', 'App\Controllers\Admin\PagesController');
+});
+
+{% endhighlight %}
+
+check via:
+
+{% highlight bash %} $ php artisan routes {% endhighlight %} 
+
+<img src="/img/post/route.png" class="img-responsive">
 
 
 
@@ -107,4 +201,6 @@ public function show($id)
 ### Reference
 ------
 
-[GoLaveral 中文翻译文档](http://www.golaravel.com/post/getting-started-with-laravel/)
+[Laravel 入门](http://www.golaravel.com/post/getting-started-with-laravel/)
+
+[Laravel 4 系列入门教程](http://lvwenhan.com/laravel/398.html)
