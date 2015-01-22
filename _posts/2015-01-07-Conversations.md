@@ -42,8 +42,8 @@ In these two days I was playing around the `Ghost in the Shellcode 2015`, and ha
 
 9. `Sam`: 久仰的大神⋯⋯三年學業成績排名全部第一。身上散髮一種淡定的大神氣息，淡淡的微笑常常能殺死人⋯⋯每次進房間都是他先說Hi，超級nice哈 :)Powerful, funny and friendly PhD students. Talked about hacking challenges, reverse engineering, undergrad and PhD projects, master applications etc. 
 
-
 **01-20**
+
 10. `Chris`: Hacking club, Parallel Programming classmates. Very fast in solving the first exercises. 他的“HCI is just a shit...""just a shit..."就像爱尔兰小哥的"frost bit"一样久久回荡在我脑海……好酷炫哈哈
 
 **01-22**
