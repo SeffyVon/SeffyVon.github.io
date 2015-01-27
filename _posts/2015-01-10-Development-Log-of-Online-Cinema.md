@@ -23,6 +23,11 @@ tags: ["JavaFX","PHP","Cryptography"]
 
 ** **
 
+####Jan 18, 2015 to Jan 26, 2015
+上个星期有些懈怠，觉得任务太重，心有戚戚。不过没关系，要努力加油～
+* Deployment of Laravel. Finished half of the work, built a good foundation, Routing, and ORM. 
+* Stunnel to the Websocket.
+
 ####Jan 17, 2015
 * [Lavarel Forge](https://medium.com/laravel-4/forge-ssl-66b4252db7d8)
 
