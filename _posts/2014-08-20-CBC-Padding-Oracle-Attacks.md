@@ -6,7 +6,7 @@ categories: Cryptography
 tags: ["Cryptography","Python"]
 ---
 
-In the week 4 programming assignment ([Coursera Crypto I Padding Oracle Attack Lecture 7.6 video](https://class.coursera.org/crypto-011/lecture/view?lecture_id=38), may need to register for class to seethe video), we broke Cipher-Block Chaining (CBC) mode using Padding Orracle Attacks. The main idea is that the attacker modifies some bits of the ciphertext, and to see the reaction of the server to learn some information of the ciphertext. In this padding oracle attack, this information is very essential to guess the bits of the plaintext.
+In the week 4 programming assignment, [Coursera Crypto I Padding Oracle Attack Lecture 7.6 video](https://class.coursera.org/crypto-011/lecture/view?lecture_id=38), may need to register for class to seethe video), we broke Cipher-Block Chaining (CBC) mode using Padding Orracle Attacks. The main idea is that the attacker modifies some bits of the ciphertext, and to see the reaction of the server to learn some information of the ciphertext. In this padding oracle attack, this information is very essential to guess the bits of the plaintext.
 
 **The notation of this blog:**
 
@@ -17,17 +17,16 @@ In the week 4 programming assignment ([Coursera Crypto I Padding Oracle Attack L
 2. c[i], p[i] without &#39;modified&#39; will all be referred to the original unmodified cipher text/ plain text.
 
 
-> [**Cipher-Block Chaining (CBC) mode:**](http://en.wikipedia.org/wiki/Cipher_block_chaining)
-> 
+[**Cipher-Block Chaining (CBC) mode:**](http://en.wikipedia.org/wiki/Cipher_block_chaining)
 > CBC mode is a type of the **block cipher**, which seperates the cipher into n fixed-size blocks so that it becomes a[0], a[1], a[2], .. a[n-1]. The blocks are usually 128 bits or 256 bits a block, depending on the encryption suite. As the block size is fixed for the blocking mode, the last block needs **padding to make sure each block has a fixed size.**
 > 
 > The CBC works as follow: 
 > 
-> There is an** Initialization Vector (IV) **which sends in plaintext. 
+> There is an **Initialization Vector (IV)** which sends in plaintext. 
 > 
 > **Enc** is a function that is specified by the cipher suite, maybe AES or some other functions. But as the server does the decryption for us, we are **free of trouble guessing or learning the information about Enc**!
 > 
-> **Dec **is the inverse function of **Enc**.
+> **Dec** is the inverse function of **Enc**.
 > 
 > **K** is the private key.
 > 
@@ -44,12 +43,10 @@ In the week 4 programming assignment ([Coursera Crypto I Padding Oracle Attack L
 >
 Note that the CBC needs padding in the last block. Thus we have a Padding Oracle Attack based on the padding.
 
-> [**Padding Oracle Attack:**](http://en.wikipedia.org/wiki/Padding_oracle) 
-> 
+[**Padding Oracle Attack:**](http://en.wikipedia.org/wiki/Padding_oracle) 
 > To some vulnerable website, the attacker submits ciphertext and **learns if last bytes of plaintextare a valid pad** by the behavior (error code, returning time difference etc.)
 
-> [**PKCS5/7 Padding Scheme:**](http://en.wikipedia.org/wiki/PKCS)
-> 
+[**PKCS5/7 Padding Scheme:**](http://en.wikipedia.org/wiki/PKCS) 
 > **PKCS5 has 8 bytes/block. PKCS7 has 16 bytes/block.**
 > 
 > <img src="http://1.bp.blogspot.com/-j2Tn1N4_OcI/TrKIY1SnAzI/AAAAAAAAAI4/gDFh7wb0uBk/s1600/1.png" class="img-responsive">
@@ -61,9 +58,9 @@ Note that the CBC needs padding in the last block. Thus we have a Padding Oracle
 > 
 > **0x 31 32 33 34 35 36 37 38 39 61 62 63 64 65 02 02.**
 > 
-> **If the last block of orginal plain text is full(8 bytes for PKCS5, 16 bytes for PKCS7), then append a new block of 16 0x10&#39;s to the orginal plain text.**
+> If the last block of orginal plain text is full(8 bytes for PKCS5, 16 bytes for PKCS7), then append a new block of 16 0x10&#39;s to the orginal plain text.
 > 
-> Eg. In PKCS7, if the last block is **&#39;123456789abcdef0&#39;**, which has 16 bytes, n = 16-16 = 0, there will be a new block of** **0x 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 (16 bytes of 0x10&#39;s) append to the cipher text, and the last two blocks will be:
+> Eg. In PKCS7, if the last block is **&#39;123456789abcdef0&#39;**, which has 16 bytes, n = 16-16 = 0, there will be a new block of **0x 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 (16 bytes of 0x10&#39;s)** append to the cipher text, and the last two blocks will be:
 > 
 > **0x 31 32 33 34 35 36 37 38 39 61 62 63 64 65 66 30 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10.**
 
@@ -71,17 +68,17 @@ For the CBC training mode, padding oracle attack works because if attackers chan
 
 <img src="https://cloud.githubusercontent.com/assets/3908463/5605879/871475ae-940c-11e4-84a9-43da1eb4d47e.png" class="img-responsive">
 
-The attacker can guess the value of** the red byte **by trying all the bytes from 0x00 to 0xff ( totally 256 attempts), by modify the cipher text, or by XORing the cipher text with the cipher block more specifically.
+The attacker can guess the value of the red byte by trying all the bytes from 0x00 to 0xff ( totally 256 attempts), by modify the cipher text, or by XORing the cipher text with the cipher block more specifically.
 
 Let  modified_c[i] := c[i] XOR **guessed_byte** XOR **0x01**
 
-so, modified_p[i+1] := p[i+1] XOR **guessed_byte **XOR **0x01**
+so, modified_p[i+1] := p[i+1] XOR **guessed_byte** XOR **0x01**
 
 Especially, if guessed_byte equals to corresponding bits (say last byte) of p[i+1], we could get:
 
-**modified_p[i+1] ends with 0x01 in the last byte, **and it is a **valid padding** for PKCS5 padding scheme. And we get **the right guessed_<strong>byte** </strong>for the corresponding bits (say last byte of c[i]).
+**modified_p[i+1] ends with 0x01 in the last byte,** and it is a **valid padding** for PKCS5 padding scheme. And we get the correct **guessed_byte** for the corresponding bits (say last byte of c[i]).
 
-Once we get the last byte of c[i], e.g. 0x32, the attacker can** set the last byte of the guessed_bytes **0x3**2, and move on to the second last byte.**
+Once we get the last byte of c[i], e.g. 0x32, the attacker can** set the last byte of the guessed_bytes **0x32**, and move on to the second last byte.
 
 For the last but second byte:
 
@@ -117,7 +114,7 @@ if guessed_byte_for_n-2 is correct ( in this case the 0x XX 32 equals to the las
 
 
 
-We can see the attacker can get all the modified blocks p0 to p(n-1), as long as he removes the blocks after ci, and modified c(i-1), he can submit the ciphertext  **iv+c0+c1+...+{modified c(i-1)}+ci **and observe if **p0+p1+...+{modified pi} **is a valid padding.
+We can see the attacker can get all the modified blocks p0 to p(n-1), as long as he removes the blocks after ci, and modified c(i-1), he can submit the ciphertext  **iv+c0+c1+...+{modified c(i-1)}+ci** and observe if **p0+p1+...+{modified pi}** is a valid padding.
 
 For programming design, we can have:
 
@@ -153,11 +150,11 @@ I calculate iv+c[0]+c[1] specially, and I already set padding equals to <strong>
 
 Recalled that to the right of the 8th byte(included),
 
-{modified c(i-1)} := c(i-1) XOR 0x0k 0k ... 0k (k bytes of 0x0k&#39;s) XOR guessed_bytes
+{modified c(i-1)} := c(i-1) XOR **0x0k 0k ... 0k (k bytes of 0x0k&#39;s)** XOR **guessed_bytes**
 
 But this cass, I xor one more 0x0j 0j... 0j (j bytes of 0x0j&#39;s)to the {modified c(i-1)} when attempting guesses to the left of the (16-j)th byte.
 
-{modified c(i-1)} := c(i-1) XOR 0x0k 0k ... 0k (k bytes of 0x0k&#39;s) XOR guessed_bytes  XOR 0x08 08 08 08 08 08 08 08 (8 bytes of 0x08&#39;s)
+{modified c(i-1)} := c(i-1) XOR **0x0k 0k ... 0k (k bytes of 0x0k&#39;s)** XOR **guessed_bytes**  XOR **0x08 08 08 08 08 08 08 08 (8 bytes of 0x08&#39;s)**
 
 And the attacker submits requests to the server to wait for the padding valid response.
 

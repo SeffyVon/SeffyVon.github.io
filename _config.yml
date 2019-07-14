@@ -16,7 +16,7 @@ github_username:  SeffyVon
 #language_default: 'en'
 #fill_default_content: true
 permalink: pretty
-highlighter: pygments
+highlighter: rouge # pygments
 markdown: kramdown
 
 
