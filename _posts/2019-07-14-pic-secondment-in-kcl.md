@@ -3,7 +3,7 @@ layout: post
 title:  "PIC Secondment in KCL"
 date:   2019-07-14 17:08
 categories: PhD Study
-tags: ["PIC", "KCL", "PhD Study"]
+tags: ["PIC", "KCL", "PhD"]
 ---
 
 This month I am visiting the CEMRG of KCL, and it has been such a great learning experience with the group, especially Dr. Caroline Roney and Prof. Steven Niederer, who gave me many valuable inputs. 
