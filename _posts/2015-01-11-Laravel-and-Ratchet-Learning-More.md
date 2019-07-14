@@ -9,7 +9,7 @@ tags: ["PHP", "Laravel", "WebSocket"]
 总结一些案例的主要步骤。
 
 
-#Hello world 主页案例
+## Hello world 主页案例
 ------
 
 * `Controller`: php artisan 生成WelcomeController 
@@ -33,7 +33,7 @@ Route::get('/', function()
 });
 {% endhighlight %}
 
-#RESTful案例
+## RESTful案例
 ------
 * `route`: app/routes.phpz中加入下面一句话，生成RESTful控制器，articles对应ArticlesController
 

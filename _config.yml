@@ -1,7 +1,7 @@
 # Site settings
-title: Seffy Von's Blog
+title: Yingjing Feng's Homepage
 email: feng0823yj@gmail.com
-description: A super powerful little hamster's blog.
+description: Welcome! 
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://seffyvon.github.io" # the base hostname & protocol for your site
 twitter_username: SeffyYjFeng
