@@ -67,9 +67,6 @@ $(document).ready(function(){
           <div class="sidebar-module sidebar-module-inset" >
             <h3>About Me</h3>
             <img src="http://seffyvon.github.io/img/hst.jpg" class="img-rounded" width="150" height="150" style="margin-bottom:5%" >
-            <p> Wanna be a scientist.</p>
-            <p> Wanna be a linguistic. </p>
-            <p> But let's start from being a programmer. </p>
             <ul class="tags" style="padding-left: 0px;">
           {% for tag in site.tags %}
           <a role="button" class="btn btn-info" style="font-size: {{ tag | last | size | times: 500 | divided_by: site.tags.size | plus: 20}}%;  line-height:1.5;  margin: 1%; background-color: #1dafac; " href="/tag/{{ tag | first | slugize }}/">
