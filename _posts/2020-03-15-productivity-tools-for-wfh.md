@@ -3,7 +3,7 @@ layout: post
 title:  "Productivity Tools for Working from Home"
 date:   2020-03-15 13:00
 categories: PhD Study
-tags: ["WFH", "Productivity","COVID", "PhD"]
+tags: ["WFH", "Productivity","COVID-19", "PhD"]
 ---
 
 These days, because of COVID-19, the best approach to keep up with the deadlines while staying safe is to start working from home. However, many of us are more or less concerned about the negative impact on the productivity. These nice little tools will help your WFH a little easier! 
@@ -18,15 +18,15 @@ Here I recommend connection, Python coding and display tools.
 
 Nice tool to mount the remote drive to a directory of your local computer, so you can access the remote drive as if it is in local. However, from my experience this is slow over the internet, for both navigation and transmission.
 
-### `scp` or `sftp`- secure file transfer protocols 
+### `scp` or `sftp`- secured file transfer protocols 
 
 Command-line tools for file transmission, if you haven't used `sshfs`. `FileZilla` is an application which does the same thing, but with a graphical interface.
 
 ---
 
-## Session tool
+## Session tools
 
-### `tmux`(linux) or `screen`(mac) - session manager **(recommend)**
+### `tmux` (or `screen`) - session manager **(recommend)**
 
 After openning a `ssh` session, I recommend using tmux sessions by running `tmux`, kick the job to run, and then detach the tmux session by `Ctrl-b d`. You can log out the ssh session, the job still persists! In another ssh session, you can reattach the tmux session by `tmux a -t 0` (suppose your tmux session id is 0, which you can check by running `tmux ls`). Everything in the last ssh session is kept the same, and ideally job has already finished! 
 
@@ -125,7 +125,7 @@ In comparison, there is no such issue in `Jupyter notebook`, because the server 
 
 ## Display tools
 
-### `VNC` - Remote desktop server for Linux systems **(recommend `TigerVNC viewer`)**
+### `VNC` - Remote desktop for Unix **(recommend)**
 
 In your host, run `x11vnc` or `vncserver` with specified device and port number, you will start a vnc server session. Then in your client, you can use vncviwer to manipulate the screen of the host.
 
@@ -142,9 +142,13 @@ My friend also mentioned that Spyder can be launched using X11 forwarding. I hav
 If you don't have another screen, you could turn iPad into another screen! Apple only offers for certain models. My Macbook Pro unfortunately doesn't fall into this category, but I found that XDisplay (which is free in iPad and Mac) is a pretty decent solution.
 
 ---
+## Summary
 
+If you are a graphical interface user, use `VNC` and `sshfs`. To benefit from the kernel power, use the remote ipython kernel. However at some point you will start to experience a lack of smoothness. 
 
-In summary, if you are a graphical user, use `VNC` and `sshfs`. To benefit from the kernel power, use the remote ipython kernel. However at some point you will start to experience a lack of smoothness. Then, it will be time to consider other tools. For Python, I prefer to edit it locally with `git`, or edit the file directly on server with `tmux` + `vim` . Sometimes, I will use `jupyter notebook` for `Pytorch` or `Tensorflow`. 
+Then, it will be time to consider programming in the command-line environment. For Python, I prefer to edit it locally with `git`, or edit the file directly on server with `tmux` + `vim` . Sometimes, I will use `jupyter notebook` for `Pytorch` or `Tensorflow`.
+
+I would also use `Jupyter notebook` to view some output, such as `matplotlib` plots, and use `Spyder` to view variables, usually saved as numpy object `.npy`, or pickle object `.pkl`.)
 
 Hope my article is useful to you. I also welcome more suggestions. Happy WFH! \o/
 
