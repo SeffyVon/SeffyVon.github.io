@@ -6,11 +6,13 @@ categories: PhD Study
 tags: ["WFH", "Productivity","COVID", "PhD"]
 ---
 
-These days, because of COVID-19, the best approach to keep up with the deadlines while staying safe is to start working from home. However, many of us are more or less concerned about the negative impact on the productivity. These nice little tools will help your WFH so much easier! 
+These days, because of COVID-19, the best approach to keep up with the deadlines while staying safe is to start working from home. However, many of us are more or less concerned about the negative impact on the productivity. These nice little tools will help your WFH a little easier! 
+
+Here I recommend connection, Python coding and display tools.
 
 ---
 
-## Connection tools
+## File system tools 
 
 ### `sshfs` - mount your remote drive locally **(recommend)**
 
@@ -20,23 +22,17 @@ Nice tool to mount the remote drive to a directory of your local computer, so yo
 
 Command-line tools for file transmission, if you haven't used `sshfs`. `FileZilla` is an application which does the same thing, but with a graphical interface.
 
+---
+
+## Session tool
+
 ### `tmux`(linux) or `screen`(mac) - session manager **(recommend)**
 
-After you ssh in, you could start a tmux session by running `tmux`, kick the job to run, and then detach the tmux session by `Ctrl-b d`, and you can log out the ssh session. 
-
-In another ssh session, you can reattach the tmux session by `tmux a -t 0` (suppose your tmux session id is 0, which you can check by running `tmux ls`). Everything in the last ssh session is kept the same, and ideally job has already finished! 
+After openning a `ssh` session, I recommend using tmux sessions by running `tmux`, kick the job to run, and then detach the tmux session by `Ctrl-b d`. You can log out the ssh session, the job still persists! In another ssh session, you can reattach the tmux session by `tmux a -t 0` (suppose your tmux session id is 0, which you can check by running `tmux ls`). Everything in the last ssh session is kept the same, and ideally job has already finished! 
 
 In the old days, you will need to use `nohup &` to set a process as a background process. 
 
 Apart from this, tmux also allow panel management, and you can also open multiple panels, adjust the size and position of each panel, and switch them, with the key of `Ctrl-b`. Everything is just pro.
-
-### `VNC` - Remote desktop server for Linux systems **(recommend `TigerVNC viewer`)**
-
-In your host, run `x11vnc` or `vncserver` with specified device and port number, you will start a vnc server session. Then in your client, you can use vncviwer to manipulate the screen of the host.
-
-Personally, for the client running locally, I recommend using `TigerVNC viewer` rather than `RealVNC viewer`, because its frame rates are higher (meaning less laggy) , and it can resize the server window to the client window resolution.
-
-In the opensuse system, you could also set up in `YaST -> Remote Administration (VNC) -> Allow Remote Administration with Session Management` to have a complete screen, but potentially will grant the client some unecessary access.
 
 ---
 
@@ -125,22 +121,30 @@ Another way to mitigate this issue is to combine with `vim` to edit other files 
 
 In comparison, there is no such issue in `Jupyter notebook`, because the server can be run in any directory, and all of the subdirectories can be edited in the client.
 
+---
+
+## Display tools
+
+### `VNC` - Remote desktop server for Linux systems **(recommend `TigerVNC viewer`)**
+
+In your host, run `x11vnc` or `vncserver` with specified device and port number, you will start a vnc server session. Then in your client, you can use vncviwer to manipulate the screen of the host.
+
+Personally, for the client running locally, I recommend using `TigerVNC viewer` rather than `RealVNC viewer`, because its frame rates are higher (meaning less laggy) , and it can resize the server window to the client window resolution.
+
+In the opensuse system, you could also set up in `YaST -> Remote Administration (VNC) -> Allow Remote Administration with Session Management` to have a complete screen, but potentially will grant the client some unecessary access.
 
 ### `X11` fowarding
 
 My friend also mentioned that Spyder can be launched using X11 forwarding. I haven't tried it yet, but I think it will be useful too!
 
----
-
-### XDisplay
+### `AirPlay` and `XDisplay` - extend your iPad into a screen
 
 If you don't have another screen, you could turn iPad into another screen! Apple only offers for certain models. My Macbook Pro unfortunately doesn't fall into this category, but I found that XDisplay (which is free in iPad and Mac) is a pretty decent solution.
 
-
 ---
 
 
-In summary, if you are a graphical user, use `VNC` and `sshfs`. To benefit from the kernel power, use the remote ipython kernel. However at some point you will start to experience a lack of smoothness. Then, it will be time to consider other tools such as `tmux` + `vim` to edit your coding file. Alternatively, you can open a `jupyter notebook` session. 
+In summary, if you are a graphical user, use `VNC` and `sshfs`. To benefit from the kernel power, use the remote ipython kernel. However at some point you will start to experience a lack of smoothness. Then, it will be time to consider other tools. For Python, I prefer to edit it locally with `git`, or edit the file directly on server with `tmux` + `vim` . Sometimes, I will use `jupyter notebook` for `Pytorch` or `Tensorflow`. 
 
 Hope my article is useful to you. I also welcome more suggestions. Happy WFH! \o/
 
